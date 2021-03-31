@@ -14,60 +14,146 @@
     
     <script type="text/processing">
     
-      Ball[] ball;
-
-      void setup(){
-        size(800, 600);
-        frameRate(100);
-        ball = new Ball[100];
-        for(int i = 0; i < ball.length; i++){
-            ball[i] = new Ball();
-        }
-      }
+      int buttonSize = 50;
+int handleDisplayX=650, handleDisplayY=300 ; 
 
 
+//BUTTONS
+int buttonPX = 800, buttonPY = 200;
 
-      void draw(){
-          background(155,0,0);
-            for(int i = 0; i < ball.length; i++){
-                ball[i].display();
-            }
+int redX = buttonPX, redY = buttonPY;
+float redD;
 
-      }
-      class Ball{
+int blueX = buttonPX+100, blueY = buttonPY;
+float blueD;
 
-          float x;
-          float y;
-          float Vx;
-          float Vy;
-          float r,g,b,o;
-          float d;
+int greyX = buttonPX+200, greyY = buttonPY;
+float greyD;
 
-          Ball(){
-              x = random(width);
-              y = random(height);
-              Vx = random(-5,5);
-              Vy = random(-5,5);
-              r = random(255);
-              g = random(255);
-              b = random(255);
-              o = random(255);
-              d = random(30) + 15;
-          }
+int handleC;
+int handleP;
 
-          void display(){
-              fill(r,g,b,o);
-              ellipse(x,y,d,d);
-              x += Vx;
-              y += Vy;
-              if(x > width || x < 0){
-                  Vx *= -1;
-              }
-              if(y > height || y < 0){
-                  Vy *= -1;
-              }
-          }
-    }
+
+
+
+PImage background;
+PImage handleDisplay;
+
+//BODY
+PImage bodyc;
+PImage bodyp;
+
+//LID
+PImage lidc;
+PImage lidp;
+
+//HANDLE
+PImage handlec;
+PImage handlep;
+
+//color
+color bodycolor = color(100,100,255);
+color lidcolor = color(100,100,255);
+color handlecolor = color(100,100,100);
+
+int handleT = 1;
+
+
+void setup(){
+ size(1200,760); 
+  background = loadImage("../img/background.png");
+  bodyc = loadImage("../img/bodycs.png");
+  lidc = loadImage("../img/lidc.png");
+  handlec = loadImage("../img/handlec.png");
+  handleDisplay = loadImage("../img/handledis.png");
+  handlep = loadImage("../img/handlep.png");
+  
+  image(handlec,0,0);
+  
+}
+
+void draw() {
+  background(#FFFFFF);
+  noTint();
+  noStroke();
+  image(background,0,0);
+ 
+ redD = sqrt(sq(mouseX - redX) + sq(mouseY - redY));
+ if(mousePressed && redD < buttonSize){
+ handlecolor = color(255,100,100);
+ //stroke(0);
+ }
+ 
+  blueD = sqrt(sq(mouseX - blueX) + sq(mouseY - blueY));
+ if(mousePressed && blueD < buttonSize){
+ handlecolor = color(100,100,255);
+ //stroke(0);
+ }
+ 
+   greyD = sqrt(sq(mouseX - greyX) + sq(mouseY - greyY));
+ if(mousePressed && greyD < buttonSize){
+ handlecolor = color(100,100,100);
+ //stroke(0);
+ }
+  
+  
+  //rect(handleDisplayX,handleDisplayY,200,400);
+  //rect(handleDisplayX+300,handleDisplayY,200,400);
+//HANDLE CHOICE   
+ if(mousePressed && mouseX>handleDisplayX && mouseX<handleDisplayX+200 && mouseY>handleDisplayY && mouseY<handleDisplayY+400){
+    handleT=2;
+ }
+  if(mousePressed && mouseX>handleDisplayX+300 && mouseX<handleDisplayX+500 && mouseY>handleDisplayY && mouseY<handleDisplayY+400){
+    handleT=-2;
+ }
+
+  
+  
+  
+  
+  //lid
+  tint(100,100,100); //Red
+  image(lidc,0,0);
+  
+  //handle
+  tint(handlecolor);
+
+  if(handleT>1){
+  image(handlec,0,0);
+ }
+ 
+   if(handleT<1){
+  image(handlep,0,0);
+ }
+  
+  //body
+  tint(bodycolor); //blue
+  image(bodyc,0,0);
+
+
+
+
+//HANDLE INTERFACE
+noTint();
+image(handleDisplay,handleDisplayX,handleDisplayY);
+
+//RED BUTTON
+  fill(255,100,100);  
+  circle(redX,redY,buttonSize);
+
+//BLUE BUTTON
+  fill(100,100,255);
+  circle(blueX, blueY,buttonSize);
+  
+//GREY BUTTON
+  fill(100,100,100);
+  circle(greyX, greyY,buttonSize);
+  
+}
+
+
+  
+  
 
 
     </script>
