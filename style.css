@@ -1,0 +1,220 @@
+*{
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+body{
+  overflow-x: hidden;
+}
+/* p{
+  font-family: Segoe UI;
+  font-size: 16pt;
+  color: #707070;
+  text-align: center;
+} */
+
+/* Main title */
+h1 {
+  font-family: Times New Roman;
+  font-size: 50pt;
+  color: #262626;
+  text-align: center;
+
+  margin: auto;
+  padding-top: .5em;
+  /* width: 50%; */
+}
+
+/* Subject Title */
+h2 {
+  font-family: Times New Roman;
+  font-weight: 200;
+  color: #303030;
+  font-size: 25pt;
+  text-align: center;
+
+  margin: auto;
+  padding-top: .25em;
+  width: 70%;
+
+}
+
+h3 {
+  font-family: Segoe UI;
+  font-style: regular;
+  font-weight: 400;
+  font-size: 16pt;
+  color: #707070;
+  text-align: center;
+  width: 50%;
+
+  margin: auto;
+  padding-top: 1em;
+  margin-bottom: 4em;
+}
+
+.normal {
+  font-family: Segoe UI;
+  font-size: 16pt;
+  color: #707070;
+  text-align: center;
+/* 45 characters wide. You dont want to go above 75characters wide */
+  width: 70ch;
+
+  margin: auto;
+  padding-top: .5em;
+  margin-bottom: 8em;
+}
+
+
+.large{
+  /* height: 40%; */
+  overflow: hidden;
+}
+.large img{
+/* centre */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+  /* width: 60em; */
+  width: 50%;
+}
+
+
+/* Top slideshow bar */
+.img-container {
+  margin-top: 2vw;
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+  width: 100vw;
+  height: 50%
+}
+
+.img-container img {
+  height: 100%;
+  left: 0;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.img-container img.next {
+  opacity: 1;
+  z-index: 1;
+}
+
+.img-container img.prev {
+  opacity: 1;
+  z-index: 2;
+}
+
+.img-container img.fade-out {
+  opacity: 0;
+  /* Speed of the transition */
+  transition: visibility 0s 1.5s, opacity 1.5s linear;
+  visibility: hidden;
+}
+
+/* -------------------------------------------- */
+
+.pcontainer{
+  margin-left: auto;
+  margin-right: auto;
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-flow: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  width: 80%;
+  /* background: grey; */
+}
+
+
+
+.item {
+  text-align: center;
+  width: 32%;
+  margin-bottom: 25px;
+
+  font-size: 16pt;
+  font-family: Segoe UI;
+  color: #707070;
+  /* background: blue; */
+}
+
+
+.item img {
+  width: 100%;
+
+}
+
+
+.price{
+  font-family: Segoe UI;
+  font-weight: bold;
+  font-size: 16pt;
+  color: #707070;
+  text-align: center;
+}
+
+/* _______________________________________________ */
+
+.bar{
+  margin-top: 50px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  width: 100vw;
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-flow: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  background-color: #333333;
+  height: 250px;
+
+  color: white;
+}
+
+.logo{
+font-weight: bold;
+font-size: 45pt;
+
+text-align: center;
+padding-left: 10%;
+padding-top: 20px;
+}
+
+.info{
+  font-family: Segoe UI;
+  font-size: 14pt;
+  color: white;
+
+  padding-right: 10%;
+  padding-top: 40px;
+}
+
+.social{
+  font-family: Segoe UI;
+  color: white;
+  padding-top: 20px;
+
+  display: flex;
+  align-items:center;
+}
+
+.IandF{
+  padding-left: 20px;
+  padding-top: 10px;
+  width: 100px;
+}
