@@ -102,7 +102,7 @@ function changeImg(changeDir) {
           calcNewImg = galleryImages.length;
       }
   }
-  newImg.setAttribute("src", "img/gallery/img" + calcNewImg + ".jpg");
+  newImg.setAttribute("src", "img/Gallery/img" + calcNewImg + ".JPG");
   newImg.setAttribute("id", "current-img");
 
   getLatestOpenedImg = calcNewImg;
