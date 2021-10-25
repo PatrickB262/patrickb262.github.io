@@ -69,7 +69,7 @@
 	document.addEventListener("adobe_dc_view_sdk.ready", function(){ 
 		var adobeDCView = new AdobeDC.View({clientId: "b37838b094ab4b10b362435db2466178", divId: "adobe-dc-view"});
 		adobeDCView.previewFile({
-			content:{location: {url: "https://drive.google.com/file/d/1xc_Xzd83tgbIfCMjyJRbR0NGZGF4fNM4/view?usp=sharing"}},
+			content:{location: {src="example.pdf"}},
 			metaData:{fileName: "September.pdf"}
 		}, {embedMode: "IN_LINE"});
 	});
