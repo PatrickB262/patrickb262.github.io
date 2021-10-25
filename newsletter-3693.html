@@ -69,7 +69,7 @@
 	document.addEventListener("adobe_dc_view_sdk.ready", function(){ 
 		var adobeDCView = new AdobeDC.View({clientId: "b37838b094ab4b10b362435db2466178", divId: "adobe-dc-view"});
 		adobeDCView.previewFile({
-			content:{location: {src="example.pdf"}},
+			content:{location: {url: "https://documentcloud.adobe.com/link/review?uri=urn:aaid:scds:US:ef98d2c8-d9ba-4093-b8a7-248694c8d8f7"}},
 			metaData:{fileName: "September.pdf"}
 		}, {embedMode: "IN_LINE"});
 	});
