@@ -64,6 +64,18 @@
   </a>
 
 <body>
+  <div id="adobe-dc-view" style="width: 800px;"></div>
+<script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+<script type="text/javascript">
+	document.addEventListener("adobe_dc_view_sdk.ready", function(){ 
+		var adobeDCView = new AdobeDC.View({clientId: "abac4c00695e43c8a81a89a829c8cdfb", divId: "adobe-dc-view"});
+		adobeDCView.previewFile({
+			content:{location: {url: "https://documentcloud.adobe.com/link/review?uri=urn:aaid:scds:US:bd8ffd19-6f16-4d74-9f75-b2983d51818c/flowers of the forest September-compressed.pdf"}},
+			metaData:{fileName: "flowers of the forest September-compressed.pdf"}
+		}, {embedMode: "IN_LINE"});
+	});
+</script>
+  
   <!-- <h2 style="">-</h3> -->
   <embed class="NewsletterPDF" src="flowers of the forest september.pdf" >
 
