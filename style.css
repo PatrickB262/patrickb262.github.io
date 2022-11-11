@@ -23,6 +23,7 @@
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
+  caret-color: transparent;
 }
 body{
   overflow-x: hidden;
