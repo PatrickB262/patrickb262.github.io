@@ -1,9 +1,4 @@
-.short{
-  display: inline-block;
-}
-.long{
-  display: none;
-}
+
 
 #flowersFromTheFarm{
   width:15rem;
@@ -25,6 +20,7 @@
   box-sizing: border-box;
   caret-color: transparent;
 }
+
 body{
   overflow-x: hidden;
 }
@@ -50,7 +46,7 @@ h2 {
   color: #303030;
   font-size: 20pt;
   text-align: center;
-  text-transform: capitalize;
+  text-transform: uppercase;
 
   margin: auto;
   padding-top: 2rem;
@@ -82,6 +78,10 @@ h3 {
   padding-left: .5rem;
   padding-right: .5rem;
   margin: 0rem auto 10rem;
+}
+
+.normalS{
+  margin-bottom: 4rem;
 }
 
 /* Auto Scrol adjust */
@@ -160,22 +160,31 @@ html {
 
 /* -------------------------------------------- */
 
-.pcontainer{
-  margin-left: auto;
-  margin-right: auto;
-  width: 95vw;
-
-  display: flex;
+.itemLayout1{
+  display:flex;
+  justify-content: center;
+  gap: .6rem;
+  width: 90vw;
+  max-width: 55rem;
+  margin: auto;
+  margin-bottom: 1rem;
+  margin-top: 0;
   flex-wrap: wrap;
-  flex-flow: wrap;
-  align-items: flex-start;
-  justify-content: space-between;
+}
+.itemLayout2{
+  display:flex;
+  justify-content: center;
+  gap: .6rem;
+  width: 90vw;
+  max-width: 55rem;
+  margin: auto;
+  flex-wrap: wrap;
 }
 
 .item {
   text-align: center;
   width: 48%;
-  margin-bottom: 25px;
+  /* margin-bottom: 25px; */
   font-size: 12pt;
   font-family: Segoe UI, Open Sans , arial;
   color: #707070;
@@ -185,6 +194,14 @@ html {
   width: 100%;
   height: auto;
   box-shadow: 0 0 12px black;
+}
+
+/* Makes multiple line corectly*/
+.short{
+  display: inline-block;
+}
+.long{
+  display: none;
 }
 
 .price{
@@ -231,6 +248,16 @@ html {
 
 
 @media only screen and (min-width: 330px){
+
+.itemLayout1{
+  gap: .7rem;
+}
+.itemLayout2{
+  gap: .7rem;
+}
+
+
+
   .small_email{
     background: none;
     color: #707070;
@@ -243,9 +270,20 @@ html {
   }
 
 
+
 }
 
 @media only screen and (min-width: 450px){
+
+  .itemLayout1{
+    gap: 2rem;
+  }
+
+  .itemLayout1 .item {
+    width: 45%;
+  }
+
+
 
   .short{
     display: none;
@@ -256,61 +294,60 @@ html {
 
 }
 
-
 @media only screen and (min-width: 768px){
 
-  .normal{
-    font-size: 22px;
+  .itemLayout1 .item {
+    width: 30%;
   }
 
-  .small_email{
-    font-size: 18pt;
+  .itemLayout2x2 .item {
+    width: 40%;
   }
 
-h1 {
-  font-size: 50pt;
-  transition-duration: .5s;
-}
+    .normal{
+      font-size: 22px;
+    }
+
+    .small_email{
+      font-size: 18pt;
+    }
+
+  h1 {
+    font-size: 50pt;
+    transition-duration: .5s;
+  }
 
 
 
-h2{
-  font-size: 30pt;
-}
+  h2{
+    font-size: 30pt;
+  }
 
-h3 {
+  h3 {
 
-  font-size: 16pt;
-  color: #707070;
-  text-align: center;
+    font-size: 16pt;
+    color: #707070;
+    text-align: center;
 
-  padding-top: 0.5rem;
-}
+    padding-top: 0.5rem;
+  }
 
 
 
-.pcontainer{
-  width: 90vw;
-  max-width: 65rem;
-}
-.item {
-  width: 48%;
-  font-size: 14pt;
-}
+  .logo{
+    order: 1;
+    font-size: 49pt;
+    padding-left: 0;
+    padding-top: 2rem;
+    margin-left: 0;
+    margin-right: 0;
+  }
 
-.logo{
-  order: 1;
-  font-size: 49pt;
-  padding-left: 0;
-  padding-top: 2rem;
-  margin-left: 0;
-  margin-right: 0;
-}
+  .img-container img {
+    object-position: center -2vw;
+  }
 
-.img-container img {
-  object-position: center -2vw;
-}
-
-.menu_gap {
-height: 26pt;
+  .menu_gap {
+  height: 26pt;
+  }
 }
